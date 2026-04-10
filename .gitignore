@@ -4,10 +4,6 @@ node_modules/
 # Saídas de build locais
 dist/
 
-# Build de deploy (gerada pelo script build:gh-pages)
-# Não comitar; o GitHub Pages lê a branch gh-pages publicada pelo script
-docs/
-
 # Logs npm
 npm-debug.log*
 
