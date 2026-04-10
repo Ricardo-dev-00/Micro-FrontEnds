@@ -1,0 +1,235 @@
+/* ================================================================
+   Micro Pedido — Estilos responsivos
+   ================================================================ */
+
+/* ---------- Painel do pedido ----------------------------------- */
+.pedido {
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 12px;
+  border: 1px solid #ebebeb;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  min-height: 280px;
+}
+
+.pedido__cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.pedido__titulo {
+  margin: 0;
+  font-size: 22px;
+  color: #1a1a2e;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Badge com contagem de itens */
+.pedido__badge {
+  background-color: #ff6b00;
+  color: #fff;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* ---------- Estado vazio --------------------------------------- */
+.pedido__vazio {
+  text-align: center;
+  padding: 48px 0;
+}
+
+.pedido__vazio-mensagem {
+  color: #bbb;
+  font-size: 15px;
+  margin: 0 0 8px;
+}
+
+.pedido__vazio-dica {
+  color: #d0d0d0;
+  font-size: 13px;
+  margin: 0;
+}
+
+/* ---------- Lista de itens ------------------------------------- */
+.pedido__lista {
+  margin-bottom: 4px;
+}
+
+/* ---------- Rodapé: total + ações ------------------------------ */
+.pedido__rodape {
+  margin-top: 14px;
+}
+
+.pedido__total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 14px 0;
+  border-top: 2px solid #f5f5f5;
+  margin-bottom: 14px;
+}
+
+.pedido__total-label {
+  font-weight: 600;
+  font-size: 15px;
+  color: #666;
+}
+
+.pedido__total-valor {
+  font-weight: 800;
+  font-size: 24px;
+  color: #2e7d32;
+}
+
+/* Botão principal — finalizar */
+.pedido__btn-finalizar {
+  width: 100%;
+  padding: 13px;
+  background-color: #2e7d32;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 8px;
+  letter-spacing: 0.3px;
+  transition: background-color 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.pedido__btn-finalizar:hover {
+  background-color: #1b5e20;
+}
+
+/* Botão secundário — limpar */
+.pedido__btn-limpar {
+  width: 100%;
+  padding: 10px;
+  background-color: transparent;
+  color: #b0b0b0;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.pedido__btn-limpar:hover {
+  color: #757575;
+  border-color: #bdbdbd;
+}
+
+/* ---------- Item individual do pedido -------------------------- */
+.item-pedido {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.item-pedido:last-child {
+  border-bottom: none;
+}
+
+.item-pedido__emoji {
+  font-size: 30px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.item-pedido__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.item-pedido__nome {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a2e;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item-pedido__subtotal {
+  font-size: 13px;
+  color: #2e7d32;
+  font-weight: 500;
+}
+
+.item-pedido__controles {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.item-pedido__quantidade {
+  font-size: 13px;
+  font-weight: 700;
+  color: #888;
+  min-width: 28px;
+  text-align: center;
+  background-color: #f5f5f5;
+  border-radius: 6px;
+  padding: 2px 6px;
+}
+
+.item-pedido__btn-remover {
+  background: none;
+  border: 1px solid #e0e0e0;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  font-size: 10px;
+  color: #c0c0c0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.item-pedido__btn-remover:hover {
+  color: #c62828;
+  border-color: #ef9a9a;
+}
+
+/* ================================================================
+   Responsivo — Mobile (≤ 600px)
+   ================================================================ */
+@media (max-width: 600px) {
+  .pedido {
+    padding: 18px 16px;
+    border-radius: 8px;
+  }
+
+  .pedido__titulo {
+    font-size: 19px;
+  }
+
+  .pedido__total-valor {
+    font-size: 20px;
+  }
+}

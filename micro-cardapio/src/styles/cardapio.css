@@ -1,0 +1,193 @@
+/* ================================================================
+   Micro Cardápio — Estilos responsivos
+   Breakpoints:
+     Desktop  > 900px  → grid 2 colunas nos cards
+     Tablet   ≤ 900px  → coluna única
+     Mobile   ≤ 500px  → card compacto, descrição reduzida
+   ================================================================ */
+
+/* ---------- Seção do cardápio ---------------------------------- */
+.cardapio {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 28px;
+}
+
+.cardapio__cabecalho {
+  margin-bottom: 22px;
+}
+
+.cardapio__titulo {
+  margin: 0 0 4px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.cardapio__subtitulo {
+  margin: 0;
+  color: #aaa;
+  font-size: 13px;
+}
+
+/* Grade de pratos — 2 colunas em telas grandes */
+.cardapio__lista {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* ---------- Card de prato ------------------------------------- */
+.prato-item {
+  display: flex;
+  gap: 14px;
+  padding: 18px;
+  background: #fff;
+  border: 1px solid #ebebeb;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.prato-item:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Emoji do prato */
+.prato-item__emoji {
+  font-size: 48px;
+  line-height: 1;
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 2px;
+}
+
+/* Bloco de conteúdo textual */
+.prato-item__info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.prato-item__nome {
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a2e;
+  line-height: 1.3;
+}
+
+.prato-item__descricao {
+  margin: 0 0 14px;
+  font-size: 13px;
+  color: #777;
+  line-height: 1.6;
+  flex: 1;
+}
+
+/* Rodapé do card: preço + botão */
+.prato-item__rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.prato-item__preco {
+  font-weight: 700;
+  font-size: 18px;
+  color: #2e7d32;
+  white-space: nowrap;
+}
+
+.prato-item__botao {
+  padding: 9px 16px;
+  background-color: #ff6b00;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.prato-item__botao:hover {
+  background-color: #e85e00;
+}
+
+.prato-item__botao:active {
+  transform: scale(0.96);
+}
+
+/* ================================================================
+   Responsivo — Tablet (≤ 900px)
+   ================================================================ */
+@media (max-width: 900px) {
+  .cardapio {
+    padding: 20px;
+  }
+
+  /* Volta para 1 coluna */
+  .cardapio__lista {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================================================================
+   Responsivo — Mobile (≤ 600px)
+   ================================================================ */
+@media (max-width: 600px) {
+  .cardapio {
+    padding: 16px;
+    border-radius: 8px;
+  }
+
+  .cardapio__titulo {
+    font-size: 20px;
+  }
+
+  .prato-item {
+    padding: 14px;
+    gap: 10px;
+  }
+
+  .prato-item__emoji {
+    font-size: 38px;
+  }
+
+  .prato-item__nome {
+    font-size: 15px;
+  }
+}
+
+/* ================================================================
+   Responsivo — Telas muito pequenas (≤ 400px)
+   ================================================================ */
+@media (max-width: 400px) {
+  /* Em telas muito pequenas, oculta a descrição para ganhar espaço */
+  .prato-item__descricao {
+    display: none;
+  }
+
+  .prato-item__emoji {
+    font-size: 32px;
+  }
+
+  /* Botão ocupa largura total */
+  .prato-item__rodape {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .prato-item__botao {
+    text-align: center;
+  }
+}
