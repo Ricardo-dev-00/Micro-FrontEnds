@@ -1,0 +1,23 @@
+# Dependências Node — nunca sobem para o repositório
+node_modules/
+
+# Saídas de build locais
+dist/
+
+# Build de deploy (gerada pelo script build:gh-pages)
+# Não comitar; o GitHub Pages lê a branch gh-pages publicada pelo script
+docs/
+
+# Logs npm
+npm-debug.log*
+
+# Variáveis de ambiente locais
+.env
+.env.local
+
+# Cache do Webpack
+.webpack_cache/
+
+# Sistemas operacionais
+.DS_Store
+Thumbs.db

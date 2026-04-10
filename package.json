@@ -5,6 +5,7 @@
   "description": "Módulo 33 EBAC — Micro Frontends com Webpack Module Federation",
   "scripts": {
     "start": "npm start --prefix micro-cardapio & npm start --prefix micro-pedido & npm start --prefix container",
-    "install:all": "npm install --prefix micro-cardapio && npm install --prefix micro-pedido && npm install --prefix container"
+    "install:all": "npm install --prefix micro-cardapio && npm install --prefix micro-pedido && npm install --prefix container",
+    "build:gh-pages": "node build-gh-pages.js"
   }
 }
